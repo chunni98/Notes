@@ -179,3 +179,14 @@ No issues found
 $zensical serve --dev-addr 192.168.31.199:8000
 # 此时同一局域网内的设备可以通过 192.168.31.199:8000 访问网站了.
 ```
+
+## 把 git 仓库放到 github
+
+在 Github 创建 Notes 仓库，
+
+```bash
+git remote add origin git@github.com:chunni98/Notes.git
+ssh-keygen -t ed25519 -C "shachi1758@outlook.com"
+cat ~/.ssh/id_ed25519.pub
+# 复制公钥，在 github 添加ssh密钥
+```

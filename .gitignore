@@ -1,0 +1,6 @@
+# Python virtual environment
+.venv/
+# zensical生成的网站
+site/
+# Python cache
+*.py[cod]

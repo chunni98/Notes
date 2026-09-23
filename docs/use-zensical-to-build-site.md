@@ -2,39 +2,40 @@
 
 ## 准备
 
-```shell
-python -m pip install --upgrade pip
+```bash
+# 安装并更新pip
+$ pip install --upgrade pip
 ```
 
 ## 创建 Python 虚拟环境并初始化Git仓库
 
-```shell
-mkdir -p ~/Notes
-cd ~/Notes
-git init
+```bash
+$ mkdir -p ~/Notes
+$ cd ~/Notes
+$ git init
 # 避免将虚拟环境文件和最终生成的网页代码提交到 Git
-echo ".venv/" > .gitignore
-echo "site/" >> .gitignore
+$ echo ".venv/" > .gitignore
+$ echo "site/" >> .gitignore
 # 在 Python 虚拟环境中运行 Zensical 以避免依赖冲突
 # 创建虚拟环境（文件夹名为 .venv）
-python3 -m venv .venv
+$ python3 -m venv .venv
 # 激活虚拟环境
-source .venv/bin/activate
+$ source .venv/bin/activate
 # 3. 升级 pip（推荐）
-pip install --upgrade pip
+$ pip install --upgrade pip
 
 # 4. 安装 Zensical
-pip install zensical
+$ pip install zensical
 
 # 5. 验证安装
-zensical --version
+$ zensical --version
 ```
 
 ## 配置项目
 
-```shell
-zensical new .
-tree # 看项目结构
+```bash
+$ zensical new .
+$ tree # 看项目结构
 .
 ├── docs/
 │   ├── index.md            # 网站首页
@@ -169,14 +170,14 @@ pymdownx.tilde = {}
 ## 启动本地网站
 
 ```bash
-$source .venv/bin/activate
-$zensical serve
+$ source .venv/bin/activate
+$ zensical serve
 Serving /home/shachi/Notes/site on http://localhost:8000
 Build started
 No issues found
 
 # 指定端口：
-$zensical serve --dev-addr 192.168.31.199:8000
+$ zensical serve --dev-addr 192.168.31.199:8000
 # 此时同一局域网内的设备可以通过 192.168.31.199:8000 访问网站了.
 ```
 
@@ -185,8 +186,21 @@ $zensical serve --dev-addr 192.168.31.199:8000
 在 Github 创建 Notes 仓库，
 
 ```bash
-git remote add origin git@github.com:chunni98/Notes.git
-ssh-keygen -t ed25519 -C "shachi1758@outlook.com"
-cat ~/.ssh/id_ed25519.pub
+$ git remote add origin git@github.com:chunni98/Notes.git
+$ ssh-keygen -t ed25519 -C "shachi1758@outlook.com"
+$ cat ~/.ssh/id_ed25519.pub
 # 复制公钥，在 github 添加ssh密钥
+```
+
+## 使用 requirements.txt
+
+```bash
+source .venv/bint/activate
+pip freeze > requirements.txt
+```
+
+使用 requirements.txt 恢复：
+
+```bash
+pip install -r requirement.txt
 ```

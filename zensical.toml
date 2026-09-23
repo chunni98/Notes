@@ -38,13 +38,13 @@ features = [
   # "header.autohide",
   "navigation.footer",
   "navigation.indexes",
-  "navigation.instant",
+  "navigation.instant", # 即时导航
   "navigation.instant.prefetch",
   # "navigation.instant.progress",
   "navigation.path",
   # "navigation.prune",
   "navigation.sections",
-  # "navigation.tabs",
+  "navigation.tabs", # 导航标签
   # "navigation.tabs.sticky",
   "navigation.top",
   "navigation.tracking",
